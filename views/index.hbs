@@ -1,0 +1,15 @@
+<div class="container">
+    <form action="/uploadfile" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Subir Imagen</label>
+            <input class="form-control" type="file" id="formFile" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Subir</button>
+    </form>
+</div>
+{{#if subido}}
+<h1>{{public_id}}</h1>
+<div class="foto">
+    <img class="fot" src="{{image_url}}" alt="fotosubida">
+</div>
+{{/if}}
