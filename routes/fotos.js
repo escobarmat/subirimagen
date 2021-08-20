@@ -8,7 +8,7 @@ var fs = require('fs-extra');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
     var imagen = await imagenModel.getImagen();
-    res.render('fotos',{imagen});
+    res.render('fotos',{isFotos:true,imagen});
 });
 
 // router.get('/eliminar/:id',async(req,res,next)=>{

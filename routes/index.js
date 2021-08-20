@@ -15,7 +15,7 @@ var fs = require('fs-extra');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index');
+  res.render('index', {isHome:true});
 });
 
 router.post('/uploadfile', async (req, res) => {
