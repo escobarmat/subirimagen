@@ -9,28 +9,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-                    <textarea name="descripcion" placeholder="Descripcion..." class="form-control"
-                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea name="descripcion" placeholder="Descripcion..." class="form-control" id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Subir Imagen</label>
-                    <input class="form-control" type="file" id="formFile" value="" name="image">
+                    <input class="form-control" type="file" id="formFile" name="image">
                 </div>
                 <button type="submit" class="btn btn-primary">Subir</button>
             </form>
         </div>
     </div>
-</div>
-<div class="container mx-auto">
-    {{#if subido}}
-    <h1>{{titulo}}1</h1>
-    <h4>{{public_id}}2</h4>
-    <div class="foto">
-        <img class="fot" src="{{image_url}}" alt="fotosubida">
-    </div>
-    <p>{{descripcion}}3</p>
-    {{/if}}
-    {{#if error}}
-    <h5>{{messaje}}</h5>
-    {{/if}}
 </div>
