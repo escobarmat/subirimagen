@@ -3,8 +3,9 @@
         <div class="carousel-inner">
             {{#each imagen}}
             <div class="carousel-item {{#if @first}}active {{/if}}">
-                <h3>{{public_id}} <a class="btn btn-danger" href="/fotos/eliminar/{{id}}/{{public_id}}">Eliminar</a> <a class="btn btn-info" href="/fotos/modificar/{{id}}">Modificar</a>
+                <h3>{{titulo}} <a class="btn btn-danger text-center" href="/fotos/eliminar/{{id}}/{{public_id}}">Eliminar</a> <a class="btn btn-info text-center" href="/fotos/modificar/{{id}}">Modificar</a>
                 </h3>
+                <h5>{{descripcion}}</h5>
                 <div class="contorno"><img src="{{image_url}}" class="d-block w-100 imgint" alt="..."></div>
             </div>
             {{/each}}

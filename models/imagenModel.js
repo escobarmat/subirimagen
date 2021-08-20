@@ -23,4 +23,20 @@ async function insertImagen(obj){
     }
 }
 
-module.exports = {getImagen,deleteImageById,insertImagen}
+async function getImagenById(id){
+    var query = "Select * from imagenes where id = ? ";
+    var rows = await pool.query(query,[id]);
+    return rows[0];
+}
+
+async function modificarImagenesById(obj,id){
+    try{
+        var query = "update imagenes set ? where id=?";
+        var rows = await pool.query(query,[obj,id]);
+        return rows;
+    }catch(error){
+        throw error;
+    }
+}
+
+module.exports = {getImagen,deleteImageById,insertImagen,getImagenById,modificarImagenesById}

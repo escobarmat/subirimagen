@@ -1,23 +1,31 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-6 mx-auto">
-            <form action="/uploadfile" method="POST" enctype="multipart/form-data">
+            <h4>Modificar Imagen</h4>
+            <form action="/fotos/modificar" method="POST" enctype="multipart/form-data">
+                <input type="hidden" value="{{imagen.id}}" name="id">
+                <input type="hidden" value="{{imagen.public_id}}" name="public_id">
+                <input type="hidden" value="{{imagen.image_url}}" name="image_url">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="titulo"
+                    <input type="text" value="{{imagen.titulo}}" class="form-control" id="exampleFormControlInput1" name="titulo"
                         placeholder="Titulo...">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
                     <textarea name="descripcion" placeholder="Descripcion..." class="form-control" id="exampleFormControlTextarea1"
-                        rows="3"></textarea>
+                        rows="3">{{imagen.descripcion}}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Subir Imagen</label>
-                    <input class="form-control" type="file" id="formFile" name="image">
+                    <input class="form-control" type="file" id="formFile" value="undefined"  name="image">
                 </div>
-                <button type="submit" class="btn btn-primary">Subir</button>
+                <div class="foto"><img class="fot" src="{{imagen.image_url}}" alt="imagensubida"></div>
+                <button type="submit" class="btn btn-primary mt-5">Subir</button>
             </form>
+            {{#if error}}
+            <h4>{{messaje}}</h4>
+            {{/if}}
         </div>
     </div>
 </div>

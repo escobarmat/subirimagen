@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/uploadfile', async (req, res) => {
   try {
-    if (req.file != undefined && image_url != "" && public_id != "" && req.body.titulo != "" && req.body.descripcion != "") {
+    if (req.file != undefined && req.body.titulo != "" && req.body.descripcion != "") {
       console.log(req.file);
       var result = await cloudinary.v2.uploader.upload(req.file.path);
       console.log(result);
