@@ -23,7 +23,7 @@ router.post('/uploadfile', async (req, res) => {
     console.log(req.file);
     var result = await cloudinary.v2.uploader.upload(req.file.path);
     console.log(result);
-    await fs.unlink(file);
+    await fs.unlink(req.file.path);
     var image_url = result.url;
     var public_id = result.public_id;
     var descripcion = req.body.descripcion;
